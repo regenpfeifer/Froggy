@@ -1,4 +1,3 @@
-import 'package:intl/date_symbol_data_local.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -29,10 +28,9 @@ class _WeatherOverlayState extends State<WeatherOverlay>
   @override
   void initState() {
     super.initState();
-    initializeDateFormatting('de', null);
     _scheduleTick();
   }
-
+  
   void _scheduleTick() {
     _timer?.cancel();
     _timer = null;
