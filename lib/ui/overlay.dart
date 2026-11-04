@@ -64,9 +64,14 @@ class _WeatherOverlayState extends State<WeatherOverlay>
 
   String get _date {
     final now = widget.weather?.localTime ?? DateTime.now();
-    return DateFormat.MMMEd('de').format(now);
+    const weekdays = ['Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.', 'So.'];
+    const months = [
+      'Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni',
+      'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'
+    ];
+    return '${weekdays[now.weekday - 1]}, ${now.day}. ${months[now.month - 1]}';
   }
-
+  
   String _summary(WeatherData w) {
     final s = widget.settings;
     final hl = (w.tempMaxC != null && w.tempMinC != null)
