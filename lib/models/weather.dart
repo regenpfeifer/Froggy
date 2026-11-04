@@ -103,60 +103,60 @@ WeatherCondition conditionFromWmo(int code) {
 String wmoDescription(int code) {
   switch (code) {
     case 0:
-      return 'Clear';
+      return 'Klar';
     case 1:
-      return 'Mainly clear';
+      return 'Überwiegend klar';
     case 2:
-      return 'Partly cloudy';
+      return 'Teilweise bewölkt';
     case 3:
-      return 'Overcast';
+      return 'Bedeckt';
     case 45:
-      return 'Fog';
+      return 'Nebel';
     case 48:
-      return 'Rime fog';
+      return 'Raureifnebel';
     case 51:
-      return 'Light drizzle';
+      return 'Leichter Nieselregen';
     case 53:
-      return 'Drizzle';
+      return 'Nieselregen';
     case 55:
-      return 'Heavy drizzle';
+      return 'Starker Nieselregen';
     case 56:
     case 57:
-      return 'Freezing drizzle';
+      return 'Gefrierender Nieselregen';
     case 61:
-      return 'Light rain';
+      return 'Leichter Regen';
     case 63:
-      return 'Rain';
+      return 'Regen';
     case 65:
-      return 'Heavy rain';
+      return 'Starker Regen';
     case 66:
     case 67:
-      return 'Freezing rain';
+      return 'Gefrierender Regen';
     case 71:
-      return 'Light snow';
+      return 'Leichter Schneefall';
     case 73:
-      return 'Snow';
+      return 'Schneefall';
     case 75:
-      return 'Heavy snow';
+      return 'Starker Schneefall';
     case 77:
-      return 'Snow grains';
+      return 'Griesel';
     case 80:
-      return 'Light showers';
+      return 'Leichte Schauer';
     case 81:
-      return 'Showers';
+      return 'Regenschauer';
     case 82:
-      return 'Heavy showers';
+      return 'Starke Regenschauer';
     case 85:
-      return 'Snow showers';
+      return 'Schneeschauer';
     case 86:
-      return 'Heavy snow showers';
+      return 'Starke Schneeschauer';
     case 95:
-      return 'Thunderstorm';
+      return 'Gewitter';
     case 96:
     case 99:
-      return 'Thunderstorm, hail';
+      return 'Gewitter mit Hagel';
     default:
-      return 'Unknown';
+      return 'Unbekannt';
   }
 }
 
