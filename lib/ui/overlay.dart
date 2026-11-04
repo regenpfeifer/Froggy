@@ -64,7 +64,7 @@ class _WeatherOverlayState extends State<WeatherOverlay>
 
   String get _date {
     final now = widget.weather?.localTime ?? DateTime.now();
-    return DateFormat.MMMEd().format(now);
+    return DateFormat.MMMEd('de').format(now);
   }
 
   String _summary(WeatherData w) {
