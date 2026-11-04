@@ -104,7 +104,7 @@ class _FroggyAppState extends State<FroggyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Google's Weather Frog (Froggy)",
+      title: "Das Wetter mit Google Froggy",
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(useMaterial3: true),
       builder: (context, child) {
