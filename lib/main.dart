@@ -1,3 +1,4 @@
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/foundation.dart'
     show kIsWeb, defaultTargetPlatform, TargetPlatform;
 import 'package:flutter/gestures.dart'
@@ -107,6 +108,16 @@ class _FroggyAppState extends State<FroggyApp> with WidgetsBindingObserver {
       title: "Google's Weather Frog (Froggy)",
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(useMaterial3: true),
+      locale: const Locale('de', 'DE'),
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('de', 'DE'),
+        Locale('en', 'US'),
+      ],
       builder: (context, child) {
         Widget result = Shortcuts(
           shortcuts: const <ShortcutActivator, Intent>{
