@@ -1,8 +1,5 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-
 import '../models/settings.dart';
 import '../models/weather.dart';
 import 'foreground.dart';
@@ -55,13 +52,18 @@ class _WeatherOverlayState extends State<WeatherOverlay>
   }
 
   String get _time {
-    final fmt = widget.settings.hourFormat == ClockFormat.h12
-        ? DateFormat.jm()
-        : DateFormat.Hm();
     final now = widget.weather?.localTime ?? DateTime.now();
-    return fmt.format(now);
+    if (widget.settings.hourFormat == ClockFormat.h12) {
+      final hour = now.hour % 12 == 0 ? 12 : now.hour % 12;
+      final period = now.hour >= 12 ? 'PM' : 'AM';
+      final minute = now.minute.toString().padLeft(2, '0');
+      return '$hour:$minute $period';
+    }
+    final hour = now.hour.toString().padLeft(2, '0');
+    final minute = now.minute.toString().padLeft(2, '0');
+    return '$hour:$minute';
   }
-
+  
   String get _date {
     final now = widget.weather?.localTime ?? DateTime.now();
     const weekdays = ['Mo.', 'Di.', 'Mi.', 'Do.', 'Fr.', 'Sa.', 'So.'];
