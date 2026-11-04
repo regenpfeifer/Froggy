@@ -27,7 +27,7 @@ jobs:
 
       - run: flutter pub get
 
-      - run: flutter build web --release --base-href /
+      - run: flutter build web --release --base-href /Froggy/
 
       - uses: actions/upload-pages-artifact@v3
         with:
